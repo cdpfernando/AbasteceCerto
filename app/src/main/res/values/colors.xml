@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta Primária (Verde) -->
+    <color name="md_theme_primary">#2E7D32</color>
+    <color name="md_theme_onPrimary">#FFFFFF</color>
+    <color name="md_theme_primaryContainer">#B2F0B2</color>
+    <color name="md_theme_onPrimaryContainer">#002107</color>
+
+    <!-- Superfícies (Fundo) -->
+    <color name="md_theme_background">#F6F8F6</color>
+    <color name="md_theme_onBackground">#1A1C19</color>
+    <color name="md_theme_surface">#F6F8F6</color>
+    <color name="md_theme_onSurface">#1A1C19</color>
+    <color name="md_theme_surfaceVariant">#DEE5D9</color>
+    <color name="md_theme_onSurfaceVariant">#424940</color>
+
+    <!-- Outlines (Bordas) -->
+    <color name="md_theme_outline">#72796F</color>
+    <color name="md_theme_outlineVariant">#C2C9BE</color>
+
+    <!-- Cores Especiais -->
+    <color name="red_error">#B00020</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- ============================================= -->
+    <!-- CORES PARA O MODO ESCURO     -->
+    <!-- ============================================= -->
+
+    <!-- Paleta Primária (Verde) - Modo Escuro -->
+    <color name="md_theme_primary_dark">#97D398</color>
+    <color name="md_theme_onPrimary_dark">#003911</color>
+    <color name="md_theme_primaryContainer_dark">#12641C</color>
+    <color name="md_theme_onPrimaryContainer_dark">#B2F0B2</color>
+
+    <!-- Superfícies (Fundo) - Modo Escuro -->
+    <color name="md_theme_background_dark">#1A1C19</color>
+    <color name="md_theme_onBackground_dark">#E2E3DD</color>
+    <color name="md_theme_surface_dark">#1A1C19</color>
+    <color name="md_theme_onSurface_dark">#E2E3DD</color>
+    <color name="md_theme_surfaceVariant_dark">#424940</color>
+    <color name="md_theme_onSurfaceVariant_dark">#C2C9BE</color>
+
+    <!-- Outlines (Bordas) - Modo Escuro -->
+    <color name="md_theme_outline_dark">#8C9388</color>
+    <color name="md_theme_outlineVariant_dark">#424940</color>
+
+    <!-- ============================================= -->
+    <!-- CORES LEGADAS PARA ÍCONES E DRAWABLES        -->
+    <!-- ============================================= -->
+    <color name="icon_background_start">#0D2155</color>
+    <color name="icon_background_end">#02050D</color>
+    <color name="icon_shape_green_light">#89E249</color>
+    <color name="icon_shape_green_dark">#2ECA53</color>
+    <color name="icon_circle_blue">#3B82F6</color>
+    <color name="icon_car_white">#FFFFFF</color>
+
+    <!-- Cores para Drawables que usavam nomes antigos -->
+    <color name="circle_bg_green_light">#2613EC5B</color> <!-- Fundo transparente do círculo -->
+    <color name="border_light">#CFE7D7</color> <!-- Borda usada no bg_dashed_border -->
+
+</resources>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Abastece Certo</string>
+    <string name="title_main">Qual combustível compensa mais?</string>
+    <string name="subtitle">Preencha os preços e calcule a melhor opção para seu carro.</string>
+    <string name="label_vehicle_selected">Veículo selecionado</string>
+    <string name="vehicle_default_name">Meu Carro (Padrão)</string>
+    <string name="label_consumption_saved">Consumo salvo</string>
+    <string name="title_prices">Preços por Litro</string>
+    <string name="label_alcohol">Preço do Álcool</string>
+    <string name="label_gasoline">Preço da Gasolina</string>
+    <string name="hint_price">0,00</string>
+    <string name="currency_symbol">R$</string>
+    <string name="btn_calculate">Calcular</string>
+    <string name="desc_icon_gas_station">Ícone de Bomba de Combustível</string>
+
+    <!-- Empty State Strings -->
+    <string name="title_no_vehicle">Nenhum veículo selecionado</string>
+    <string name="desc_no_vehicle">Para um cálculo preciso, selecione ou cadastre um veículo.</string>
+    <string name="btn_select_vehicle">Selecionar/Cadastrar Veículo</string>
+    <string name="action_touch_to_add">Adicione um novo carro.</string>
+
+    <string name="desc_back">Voltar</string>
+    <string name="fuel_info_format">R$ %.2f / %.1f km/l</string>
+
+    <!-- Correções de acentuação e padronização -->
+    <string name="add_vehicle">Adicionar Veículo</string>
+    <string name="edit_vehicle">Editar Veículo</string>
+    <string name="alcohol_price_hint">Preço do Álcool</string>
+    <string name="gas_price_hint">Preço da Gasolina</string>
+
+</resources>
