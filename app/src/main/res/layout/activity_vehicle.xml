@@ -8,7 +8,7 @@
     android:background="?attr/colorSurface"
     tools:context=".VehicleActivity">
 
-    <!-- 1. CONTEÚDO ROLÁVEL (Formulário) -->
+    <!--    TODO: remover strings hardcoded-->
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll_form"
         android:layout_width="match_parent"
@@ -24,7 +24,6 @@
             android:layout_height="wrap_content"
             android:padding="24dp">
 
-            <!-- Header -->
             <ImageView
                 android:id="@+id/iv_back"
                 android:layout_width="24dp"
@@ -49,7 +48,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/iv_back" />
 
-            <!-- Título da Seção -->
             <TextView
                 android:id="@+id/tv_label_vehicle_data"
                 android:layout_width="wrap_content"
@@ -74,7 +72,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_label_vehicle_data" />
 
-            <!-- Nome do Veículo Input -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_name"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -104,7 +101,6 @@
                     tools:text="Volvo XC40" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Álcool Input -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_alcohol_km"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -135,7 +131,6 @@
                     tools:text="10.5" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Gasoline Input -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_gasoline_km"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -169,7 +164,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!-- 2. ÁREA FIXA (Botões de Ação) -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_actions"
         android:layout_width="match_parent"

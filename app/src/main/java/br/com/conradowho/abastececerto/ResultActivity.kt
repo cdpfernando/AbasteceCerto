@@ -117,7 +117,6 @@ class ResultActivity : AppCompatActivity() {
 
         val colorPrimaryContainer = getThemeColor(this, com.google.android.material.R.attr.colorPrimaryContainer)
         val colorOnPrimaryContainer = getThemeColor(this, com.google.android.material.R.attr.colorOnPrimaryContainer)
-        val colorOnSurface = getThemeColor(this, com.google.android.material.R.attr.colorOnSurface)
         val colorOnSurfaceVariant = getThemeColor(this, com.google.android.material.R.attr.colorOnSurfaceVariant)
 
         card.strokeColor = colorPrimary

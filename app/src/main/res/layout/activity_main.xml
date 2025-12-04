@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="?attr/colorSurface">
+    android:background="?attr/colorSurface"
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:padding="24dp">
 
-        <!-- Header Section -->
         <ImageView
             android:id="@+id/iv_header_icon"
             android:layout_width="32dp"
@@ -21,11 +20,11 @@
             android:layout_marginEnd="12dp"
             android:contentDescription="@string/desc_icon_gas_station"
             android:src="@drawable/ic_gas_station"
-            app:tint="?attr/colorPrimary"
+            app:layout_constraintEnd_toStartOf="@id/tv_header_title"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/tv_header_title"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary" />
 
         <TextView
             android:id="@+id/tv_header_title"
@@ -40,7 +39,7 @@
             app:layout_constraintStart_toEndOf="@id/iv_header_icon"
             app:layout_constraintTop_toTopOf="@id/iv_header_icon" />
 
-        <!-- Main Title -->
+
         <TextView
             android:id="@+id/tv_main_title"
             android:layout_width="0dp"
@@ -50,51 +49,48 @@
             android:textAppearance="?attr/textAppearanceHeadline4"
             android:textColor="?attr/colorOnSurface"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/iv_header_icon"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/iv_header_icon" />
 
-        <!-- Subtitle -->
+
         <TextView
             android:id="@+id/tv_subtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/subtitle"
-            tools:text="Preencha os preços e calcule a melhor opção para seu carro."
             android:textAppearance="?attr/textAppearanceBody1"
             android:textColor="?attr/colorOnSurfaceVariant"
-            app:layout_constraintTop_toBottomOf="@id/tv_main_title"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/tv_main_title"
+            tools:text="Preencha os preços e calcule a melhor opção para seu carro." />
 
 
-        <!-- ================== SEÇÃO DE VEÍCULO ================== -->
-
-        <!-- Empty State Container -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/container_empty_vehicle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:padding="16dp"
             android:background="@drawable/bg_dashed_border"
+            android:padding="16dp"
             android:visibility="visible"
-            app:layout_constraintTop_toBottomOf="@id/tv_subtitle"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/tv_subtitle">
 
             <TextView
                 android:id="@+id/tv_empty_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_vehicle_selected"
-                tools:text="Veículo selecionado"
                 android:textAppearance="?attr/textAppearanceCaption"
                 android:textColor="?attr/colorOnSurfaceVariant"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Veículo selecionado" />
 
             <FrameLayout
                 android:id="@+id/fl_empty_icon"
@@ -111,9 +107,9 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_gravity="center"
+                    android:importantForAccessibility="no"
                     android:src="@drawable/ic_car"
-                    app:tint="?attr/colorOnPrimaryContainer"
-                    android:importantForAccessibility="no" />
+                    app:tint="?attr/colorOnPrimaryContainer" />
             </FrameLayout>
 
             <TextView
@@ -148,30 +144,30 @@
                 android:id="@+id/iv_add_vehicle"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_add_circle"
-                app:tint="?attr/colorPrimary"
                 android:contentDescription="@string/add_vehicle"
+                android:src="@drawable/ic_add_circle"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_empty_label" />
+                app:layout_constraintTop_toBottomOf="@id/tv_empty_label"
+                app:tint="?attr/colorPrimary" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- Vehicle Card (Preenchido) -->
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_vehicle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:visibility="gone"
             app:cardBackgroundColor="?attr/colorSurface"
-            app:strokeColor="?attr/colorOutlineVariant"
-            app:strokeWidth="1dp"
             app:cardCornerRadius="12dp"
             app:cardElevation="0dp"
-            android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@id/tv_subtitle"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/tv_subtitle"
+            app:strokeColor="?attr/colorOutlineVariant"
+            app:strokeWidth="1dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -241,12 +237,12 @@
                     android:id="@+id/btn_edit_vehicle"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_edit"
-                    app:tint="?attr/colorOnSurfaceVariant"
                     android:contentDescription="@string/edit_vehicle"
+                    android:src="@drawable/ic_edit"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_vehicle_label" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_vehicle_label"
+                    app:tint="?attr/colorOnSurfaceVariant" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -257,9 +253,7 @@
             android:layout_height="wrap_content"
             app:barrierDirection="bottom"
             app:constraint_referenced_ids="container_empty_vehicle,card_vehicle" />
-
-
-        <!-- ================== SEÇÃO DE PREÇOS ================== -->
+        
 
         <TextView
             android:id="@+id/tv_prices_title"
@@ -273,7 +267,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/barrier_vehicle" />
 
-        <!-- Álcool Input -->
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_alcoholl"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -282,29 +276,28 @@
             android:layout_marginTop="16dp"
             android:hint="@string/alcohol_price_hint"
             android:textColorHint="?attr/colorOnSurfaceVariant"
-            app:prefixText="R$ "
             app:boxBackgroundColor="?attr/colorSurfaceVariant"
-            app:boxCornerRadiusTopStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
             app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
             app:boxStrokeColor="?attr/colorPrimary"
             app:boxStrokeWidth="1dp"
             app:boxStrokeWidthFocused="2dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_prices_title"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/tv_prices_title"
+            app:prefixText="R$ ">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_alcohol"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
                 android:digits="0123456789.,"
+                android:inputType="numberDecimal"
                 android:textColor="?attr/colorOnSurface" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Gasolina Input -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_gasolinee"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -313,47 +306,45 @@
             android:layout_marginTop="16dp"
             android:hint="@string/gas_price_hint"
             android:textColorHint="?attr/colorOnSurfaceVariant"
-            app:prefixText="R$ "
             app:boxBackgroundColor="?attr/colorSurfaceVariant"
-            app:boxCornerRadiusTopStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
             app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
             app:boxStrokeColor="?attr/colorPrimary"
             app:boxStrokeWidth="1dp"
             app:boxStrokeWidthFocused="2dp"
-            app:layout_constraintTop_toBottomOf="@id/til_alcoholl"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/til_alcoholl"
+            app:prefixText="R$ ">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_gasoline"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
                 android:digits="0123456789.,"
+                android:inputType="numberDecimal"
                 android:textColor="?attr/colorOnSurface" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
-        <!-- Calculate Button -->
         <Button
             android:id="@+id/btn_calculate"
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="24dp"
+            android:backgroundTint="?attr/colorPrimary"
             android:text="@string/btn_calculate"
             android:textAllCaps="false"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:backgroundTint="?attr/colorPrimary"
             app:cornerRadius="12dp"
-            app:layout_constraintTop_toBottomOf="@id/til_gasolinee"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/til_gasolinee" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

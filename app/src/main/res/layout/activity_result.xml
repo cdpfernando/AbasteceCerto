@@ -8,13 +8,13 @@
     android:background="?attr/colorSurface"
     tools:context=".ResultActivity">
 
+<!--    TODO: remover strings hardcoded-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="24dp">
 
-        <!-- Header -->
         <ImageView
             android:id="@+id/iv_back"
             android:layout_width="24dp"
@@ -38,7 +38,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/iv_back" />
 
-        <!-- Winner Card (Cartão de Destaque) -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_winner"
             android:layout_width="0dp"
@@ -59,7 +58,6 @@
                 android:orientation="vertical"
                 android:padding="32dp">
 
-                <!-- Icon Winner -->
                 <FrameLayout
                     android:layout_width="80dp"
                     android:layout_height="80dp"
@@ -106,7 +104,6 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Resumo Title -->
         <TextView
             android:id="@+id/tv_label_resumo"
             android:layout_width="wrap_content"
@@ -119,7 +116,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card_winner" />
 
-        <!-- Card Gasoline Summary -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_resumo_gasolina"
             android:layout_width="0dp"
@@ -215,7 +211,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Card Alcohol Summary -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_resumo_alcool"
             android:layout_width="0dp"

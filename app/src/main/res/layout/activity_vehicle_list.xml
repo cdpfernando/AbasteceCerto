@@ -8,7 +8,7 @@
     android:background="?attr/colorSurface"
     tools:context=".VehicleListActivity">
 
-    <!-- 1. CABEÇALHO (Container com Padding de 24dp para alinhar com as outras telas) -->
+<!--   TODO: remover strings hardcoded-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header_container"
         android:layout_width="match_parent"
@@ -41,7 +41,6 @@
             app:layout_constraintTop_toTopOf="@id/iv_back" />
 
 
-        <!-- Botão Adicionar (Topo) - Aparece quando tem lista -->
         <ImageView
             android:id="@+id/iv_add_header"
             android:layout_width="28dp"
@@ -56,7 +55,6 @@
             app:tint="?attr/colorPrimary"
             tools:visibility="visible" />
 
-        <!-- Subtítulo -->
         <TextView
             android:id="@+id/tv_subtitle_list"
             android:layout_width="0dp"
@@ -71,9 +69,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- 2. CONTEÚDO PRINCIPAL -->
 
-    <!-- Estado Vazio -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_empty_state"
         android:layout_width="match_parent"
@@ -127,7 +123,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Lista de Veículos -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_vehicles"
         android:layout_width="match_parent"
@@ -143,7 +138,6 @@
         tools:listitem="@layout/item_vehicle_card"
         tools:visibility="visible" />
 
-    <!-- 3. ÁREA FIXA (Botão Adicionar Primeiro - Só aparece no empty state) -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_actions"
         android:layout_width="match_parent"

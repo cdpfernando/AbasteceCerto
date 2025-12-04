@@ -12,12 +12,12 @@
     app:strokeColor="?attr/colorOutlineVariant"
     app:strokeWidth="1dp">
 
+<!--    TODO: remover strings hardcoded-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <!-- Ícone do Carro -->
         <FrameLayout
             android:id="@+id/fl_icon_bg"
             android:layout_width="48dp"
@@ -37,7 +37,7 @@
                 android:importantForAccessibility="no" />
         </FrameLayout>
 
-        <!-- Textos -->
+
         <TextView
             android:id="@+id/tv_vehicle_name"
             android:layout_width="0dp"
@@ -70,7 +70,7 @@
             app:layout_constraintStart_toEndOf="@id/fl_icon_bg"
             app:layout_constraintTop_toBottomOf="@id/tv_vehicle_name" />
 
-        <!-- Ações -->
+
         <ImageView
             android:id="@+id/iv_edit"
             android:layout_width="24dp"
@@ -93,7 +93,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/red_error" /> <!-- Pode usar ?attr/colorError se preferir -->
+            app:tint="@color/red_error" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
