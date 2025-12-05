@@ -56,6 +56,11 @@
 
     <!-- Cores para Drawables que usavam nomes antigos -->
     <color name="circle_bg_green_light">#2613EC5B</color> <!-- Fundo transparente do círculo -->
-    <color name="border_light">#CFE7D7</color> <!-- Borda usada no bg_dashed_border -->
+    <color name="border_light">#CFE7D7</color>
+    <!-- Cores do Ícone do App -->
+    <color name="icon_app_bg_start">#4ADE80</color> <!-- Verde claro (canto superior direito) -->
+    <color name="icon_app_bg_end">#15803D</color>   <!-- Verde escuro (canto inferior esquerdo) -->
+    <color name="icon_app_overlay">#33FFFFFF</color> <!-- Branco com 20% de opacidade -->
+    <color name="icon_app_foreground">#FFFFFF</color> <!-- Borda usada no bg_dashed_border -->
 
 </resources>
