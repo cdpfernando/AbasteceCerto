@@ -13,6 +13,7 @@
     <string name="btn_calculate">Calcular</string>
     <string name="desc_icon_gas_station">Ícone de Bomba de Combustível</string>
 
+    <!-- Empty State Strings -->
     <string name="title_no_vehicle">Nenhum veículo selecionado</string>
     <string name="desc_no_vehicle">Para um cálculo preciso, selecione ou cadastre um veículo.</string>
     <string name="btn_select_vehicle">Selecionar/Cadastrar Veículo</string>
@@ -20,15 +21,15 @@
 
     <string name="desc_back">Voltar</string>
     <string name="fuel_info_format">R$ %.2f / %.1f km/l</string>
+    <string name="add_vehicle">Adicionar veículo</string>
+    <string name="edit_vehicle">Editar veículo</string>
+    <string name="alcohol_price_hint">Preço do Álcool</string>
+    <string name="gas_price_hint">Preço da Gasolina</string>
     <string name="fuel_price_format">R$ %.2f</string>
     <string name="fuel_price_liter_format">R$ %.2f / litro</string>
     <string name="empty_value">---</string>
 
-    <string name="add_vehicle">Adicionar Veículo</string>
-    <string name="edit_vehicle">Editar Veículo</string>
-    <string name="alcohol_price_hint">Preço do Álcool</string>
-    <string name="gas_price_hint">Preço da Gasolina</string>
-
+    <!-- Dialog Strings -->
     <string name="dialog_delete_vehicle_title">Excluir Veículo</string>
     <string name="dialog_delete_vehicle_message">Tem certeza que deseja remover o veículo %1$s?</string>
     <string name="action_delete">Excluir</string>
@@ -36,7 +37,40 @@
     <string name="consumption_abbreviated">A: %.1f / G: %.1f</string>
     <string name="consumption_full">Álcool: %.1f / Gasolina: %.1f</string>
 
+    <!-- Fuel Types -->
     <string name="fuel_gasoline">Gasolina</string>
     <string name="fuel_alcohol">Álcool</string>
+
+    <!-- Result Screen -->
+    <string name="title_result">Resultado</string>
+    <string name="label_best_option">Melhor opção para seu bolso:</string>
+    <string name="label_bestoption_description">Com os valores informados, esta opção oferece o melhor custo-benefício por quilômetro rodado.</string>
+    <string name="label_calculation_title">Resumo do Cálculo</string>
+    <string name="per_km">por km</string>
+    <string name="recalculate">Recalcular</string>
+
+    <!-- Vehicle Form Screen -->
+    <string name="vehicle_form_title">Cadastro</string>
+    <string name="vehicle_form_section_title">Dados do Veículo</string>
+    <string name="vehicle_form_subtitle">Preencha as informações para calcular o melhor combustível.</string>
+    <string name="vehicle_form_name_hint">Nome do Veículo</string>
+    <string name="vehicle_form_alcohol_hint">Consumo no Álcool</string>
+    <string name="vehicle_form_gasoline_hint">Consumo na Gasolina</string>
+    <string name="vehicle_form_suffix_consumption">Km/L</string>
+    <string name="vehicle_form_btn_save">Salvar Veículo</string>
+    <string name="vehicle_form_btn_cancel">Cancelar</string>
+
+    <!-- Vehicle List Screen -->
+    <string name="vehicle_list_title">Seus Veículos</string>
+    <string name="vehicle_list_subtitle">Gerencie sua frota para cálculos precisos.</string>
+    <string name="vehicle_list_add_description">Adicionar veículo</string>
+    <string name="vehicle_list_empty_title">Nenhum veículo encontrado</string>
+    <string name="vehicle_list_empty_subtitle">Toque no botão abaixo para adicionar seu primeiro veículo.</string>
+    <string name="vehicle_list_btn_add_first">Adicionar Veículo</string>
+
+    <!-- Vehicle List Item -->
+    <string name="vehicle_item_touch_to_select">Toque para selecionar</string>
+    <string name="vehicle_item_delete_desc">Excluir veículo</string>
+    <string name="vehicle_item_edit_desc">Editar veículo</string>
 
 </resources>

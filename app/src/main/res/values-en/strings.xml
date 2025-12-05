@@ -1,42 +1,76 @@
 <resources>
-    <string name="app_name">Abastece Certo</string>
-    <string name="title_main">Which fuel is better?</string>
-    <string name="subtitle">Enter prices to find the best option for your car.</string>
+    <string name="app_name">FuelRight</string>
+    <string name="title_main">Which fuel pays off?</string>
+    <string name="subtitle">Enter the prices and find the best option for your car.</string>
     <string name="label_vehicle_selected">Selected Vehicle</string>
     <string name="vehicle_default_name">My Car (Default)</string>
-    <string name="label_consumption_saved">Saved Consumption</string>
-    <string name="title_prices">Prices per Liter</string>
+    <string name="label_consumption_saved">Saved consumption</string>
+    <string name="title_prices">Price per Liter</string>
     <string name="label_alcohol">Ethanol Price</string>
     <string name="label_gasoline">Gasoline Price</string>
     <string name="hint_price">0.00</string>
-    <string name="currency_symbol">R$</string>
+    <string name="currency_symbol">$</string>
     <string name="btn_calculate">Calculate</string>
-    <string name="desc_icon_gas_station">Fuel Pump Icon</string>
+    <string name="desc_icon_gas_station">Fuel pump icon</string>
 
+    <!-- Empty State Strings -->
     <string name="title_no_vehicle">No vehicle selected</string>
-    <string name="desc_no_vehicle">For accurate results, select or add a vehicle.</string>
+    <string name="desc_no_vehicle">For an accurate calculation, select or add a vehicle.</string>
     <string name="btn_select_vehicle">Select/Add Vehicle</string>
     <string name="action_touch_to_add">Add a new car.</string>
 
     <string name="desc_back">Back</string>
-    <string name="fuel_info_format">R$ %.2f / %.1f km/l</string>
+    <string name="fuel_info_format">$%.2f / %.1f km/l</string>
     <string name="add_vehicle">Add vehicle</string>
     <string name="edit_vehicle">Edit vehicle</string>
     <string name="alcohol_price_hint">Ethanol Price</string>
-
     <string name="gas_price_hint">Gasoline Price</string>
-    <string name="fuel_price_format">R$ %.2f</string>
-    <string name="fuel_price_liter_format">R$ %.2f / liter</string>
+    <string name="fuel_price_format">$%.2f</string>
+    <string name="fuel_price_liter_format">$%.2f / liter</string>
     <string name="empty_value">---</string>
 
-    <string name="dialog_delete_vehicle_title">Delete vehicle</string>
+    <!-- Dialog Strings -->
+    <string name="dialog_delete_vehicle_title">Delete Vehicle</string>
     <string name="dialog_delete_vehicle_message">Are you sure you want to remove the vehicle %1$s?</string>
     <string name="action_delete">Delete</string>
     <string name="action_cancel">Cancel</string>
-    <string name="consumption_abbreviated">A: %.1f / G: %.1f</string>
-    <string name="consumption_full">Alcohol: %.1f / Gasoline: %.1f</string>
+    <string name="consumption_abbreviated">E: %.1f / G: %.1f</string>
+    <string name="consumption_full">Ethanol: %.1f / Gasoline: %.1f</string>
 
+    <!-- Fuel Types -->
     <string name="fuel_gasoline">Gasoline</string>
-    <string name="fuel_alcohol">Alcohol</string>
+    <string name="fuel_alcohol">Ethanol</string>
+
+    <!-- Result Screen -->
+    <string name="title_result">Result</string>
+    <string name="label_best_option">Best option for your wallet:</string>
+    <string name="label_bestoption_description">With the entered values, this option offers the best cost-benefit per kilometer.</string>
+    <string name="label_calculation_title">Calculation Summary</string>
+    <string name="per_km">per km</string>
+    <string name="recalculate">Recalculate</string>
+
+    <!-- Vehicle Form Screen -->
+    <string name="vehicle_form_title">Register</string>
+    <string name="vehicle_form_section_title">Vehicle Data</string>
+    <string name="vehicle_form_subtitle">Fill in the information to calculate the best fuel.</string>
+    <string name="vehicle_form_name_hint">Vehicle Name</string>
+    <string name="vehicle_form_alcohol_hint">Consumption on Ethanol</string>
+    <string name="vehicle_form_gasoline_hint">Consumption on Gasoline</string>
+    <string name="vehicle_form_suffix_consumption">Km/L</string>
+    <string name="vehicle_form_btn_save">Save Vehicle</string>
+    <string name="vehicle_form_btn_cancel">Cancel</string>
+
+    <!-- Vehicle List Screen -->
+    <string name="vehicle_list_title">Your Vehicles</string>
+    <string name="vehicle_list_subtitle">Manage your fleet for accurate calculations.</string>
+    <string name="vehicle_list_add_description">Add vehicle</string>
+    <string name="vehicle_list_empty_title">No vehicles found</string>
+    <string name="vehicle_list_empty_subtitle">Tap the button below to add your first vehicle.</string>
+    <string name="vehicle_list_btn_add_first">Add Vehicle</string>
+
+    <!-- Vehicle List Item -->
+    <string name="vehicle_item_touch_to_select">Tap to select</string>
+    <string name="vehicle_item_delete_desc">Delete vehicle</string>
+    <string name="vehicle_item_edit_desc">Edit vehicle</string>
 
 </resources>

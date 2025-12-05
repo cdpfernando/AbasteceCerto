@@ -8,7 +8,6 @@
     android:background="?attr/colorSurface"
     tools:context=".VehicleActivity">
 
-    <!--    TODO: remover strings hardcoded-->
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll_form"
         android:layout_width="match_parent"
@@ -39,7 +38,7 @@
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cadastro"
+                android:text="@string/vehicle_form_title"
                 android:textAppearance="?attr/textAppearanceTitleLarge"
                 android:textColor="?attr/colorOnSurface"
                 android:textStyle="bold"
@@ -53,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Dados do Veículo"
+                android:text="@string/vehicle_form_section_title"
                 android:textAppearance="?attr/textAppearanceHeadlineSmall"
                 android:textColor="?attr/colorOnSurface"
                 android:textStyle="bold"
@@ -65,7 +64,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Preencha as informações para calcular o melhor combustível."
+                android:text="@string/vehicle_form_subtitle"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?attr/colorOnSurfaceVariant"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -78,7 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:hint="Nome do Veículo"
+                android:hint="@string/vehicle_form_name_hint"
                 android:textColorHint="?attr/colorOnSurfaceVariant"
                 app:boxBackgroundColor="?attr/colorSurfaceVariant"
                 app:boxCornerRadiusBottomEnd="12dp"
@@ -107,7 +106,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:hint="Consumo no Álcool"
+                android:hint="@string/vehicle_form_alcohol_hint"
                 android:textColorHint="?attr/colorOnSurfaceVariant"
                 app:boxBackgroundColor="?attr/colorSurfaceVariant"
                 app:boxCornerRadiusBottomEnd="12dp"
@@ -119,7 +118,7 @@
                 app:boxStrokeWidthFocused="2dp"
                 app:startIconDrawable="@drawable/ic_gas_station"
                 app:startIconTint="?attr/colorOnSurfaceVariant"
-                app:suffixText="Km/L"
+                app:suffixText="@string/vehicle_form_suffix_consumption"
                 app:layout_constraintTop_toBottomOf="@id/til_name">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -137,7 +136,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:hint="Consumo na Gasolina"
+                android:hint="@string/vehicle_form_gasoline_hint"
                 android:textColorHint="?attr/colorOnSurfaceVariant"
                 app:boxBackgroundColor="?attr/colorSurfaceVariant"
                 app:boxCornerRadiusBottomEnd="12dp"
@@ -149,7 +148,7 @@
                 app:boxStrokeWidthFocused="2dp"
                 app:startIconDrawable="@drawable/ic_gas_station"
                 app:startIconTint="?attr/colorOnSurfaceVariant"
-                app:suffixText="Km/L"
+                app:suffixText="@string/vehicle_form_suffix_consumption"
                 app:layout_constraintTop_toBottomOf="@id/til_alcohol_km">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -182,7 +181,7 @@
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:backgroundTint="?attr/colorPrimary"
-            android:text="Salvar Veículo"
+            android:text="@string/vehicle_form_btn_save"
             android:textAllCaps="false"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="16sp"
@@ -198,10 +197,9 @@
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:layout_marginTop="8dp"
-            android:backgroundTint="?attr/colorSecondary"
-            android:text="Cancelar"
+            android:text="@string/vehicle_form_btn_cancel"
             android:textAllCaps="false"
-            android:textColor="?attr/colorOutlineVariant"
+            android:textColor="?attr/colorPrimary"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/btn_save"
@@ -210,6 +208,5 @@
             app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

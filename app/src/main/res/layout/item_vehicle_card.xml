@@ -12,7 +12,6 @@
     app:strokeColor="?attr/colorOutlineVariant"
     app:strokeWidth="1dp">
 
-<!--    TODO: remover strings hardcoded-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,9 +31,9 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="center"
+                android:importantForAccessibility="no"
                 android:src="@drawable/ic_car"
-                app:tint="?attr/colorOnSurfaceVariant"
-                android:importantForAccessibility="no" />
+                app:tint="?attr/colorOnSurfaceVariant" />
         </FrameLayout>
 
 
@@ -62,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
-            android:text="Toque para selecionar"
+            android:text="@string/vehicle_item_touch_to_select"
             android:textAppearance="?attr/textAppearanceBodySmall"
             android:textColor="?attr/colorOnSurfaceVariant"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -77,6 +76,7 @@
             android:layout_height="24dp"
             android:layout_marginEnd="16dp"
             android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/vehicle_item_edit_desc"
             android:src="@drawable/ic_edit"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/iv_action"
@@ -88,7 +88,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Excluir veículo"
+            android:contentDescription="@string/vehicle_item_delete_desc"
             android:src="@drawable/ic_delete"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

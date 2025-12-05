@@ -8,7 +8,6 @@
     android:background="?attr/colorSurface"
     tools:context=".ResultActivity">
 
-<!--    TODO: remover strings hardcoded-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
@@ -29,7 +28,7 @@
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Resultado"
+            android:text="@string/title_result"
             android:textAppearance="?attr/textAppearanceTitleLarge"
             android:textColor="?attr/colorOnSurface"
             android:textStyle="bold"
@@ -77,7 +76,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Melhor opção para seu bolso:"
+                    android:text="@string/label_best_option"
                     android:textAppearance="?attr/textAppearanceLabelLarge"
                     android:textColor="?attr/colorOnSurfaceVariant" />
 
@@ -97,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:text="Com os valores informados, esta opção oferece o melhor custo-benefício por quilômetro rodado."
+                    android:text="@string/label_bestoption_description"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="?attr/colorOnSurfaceVariant" />
 
@@ -109,7 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Resumo do Cálculo"
+            android:text="@string/label_calculation_title"
             android:textAppearance="?attr/textAppearanceHeadlineSmall"
             android:textColor="?attr/colorOnSurface"
             android:textStyle="bold"
@@ -168,7 +167,7 @@
                         android:id="@+id/tv_gas_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Gasolina"
+                        android:text="@string/fuel_gasoline"
                         android:textAppearance="?attr/textAppearanceTitleMedium"
                         android:textColor="?attr/colorOnSurface"
                         android:textStyle="bold" />
@@ -204,7 +203,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="por km"
+                        android:text="@string/per_km"
                         android:textAppearance="?attr/textAppearanceLabelSmall"
                         android:textColor="?attr/colorOnSurfaceVariant" />
                 </LinearLayout>
@@ -263,7 +262,7 @@
                         android:id="@+id/tv_alcohol_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Álcool"
+                        android:text="@string/fuel_alcohol"
                         android:textAppearance="?attr/textAppearanceTitleMedium"
                         android:textColor="?attr/colorOnSurface"
                         android:textStyle="bold" />
@@ -299,7 +298,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="por km"
+                        android:text="@string/per_km"
                         android:textAppearance="?attr/textAppearanceLabelSmall"
                         android:textColor="?attr/colorOnSurfaceVariant" />
                 </LinearLayout>
@@ -311,7 +310,7 @@
             android:layout_height="56dp"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="24dp"
-            android:text="Recalcular"
+            android:text="@string/recalculate"
             android:textAllCaps="false"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="16sp"
