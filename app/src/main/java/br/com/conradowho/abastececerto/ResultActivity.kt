@@ -9,7 +9,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import br.com.conradowho.abastececerto.databinding.ActivityResultBinding
 import br.com.conradowho.abastececerto.entity.CalculationResult
-import br.com.conradowho.abastececerto.R
 
 class ResultActivity : AppCompatActivity() {
     companion object {
@@ -26,29 +25,41 @@ class ResultActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        val result = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
-            intent.getParcelableExtra(EXTRA_CALCULATION_RESULT, CalculationResult::class.java)
-        } else {
-            @Suppress("DEPRECATION")
-            intent.getParcelableExtra(EXTRA_CALCULATION_RESULT) as? CalculationResult
-        }
-
-        //todo: remover strings hardcoded
-        if (result != null) {
-            if (result.vehicleItem != null) {
-                binding.tvGasInfo.text = String.format("R$ %.2f / %.1f km/l", result.gasPrice, result.vehicleItem.gasolineConsumption)
-                binding.tvAlcoholInfo.text = String.format("R$ %.2f / %.1f km/l", result.ethanolPrice, result.vehicleItem.alcoholConsumption)
-                binding.tvGasCostKm.text = String.format("R$ %.2f", result.gasPricePerKm)
-                binding.tvAlcoholCostKm.text = String.format("R$ %.2f", result.ethanolPricePerKm)
+        val result =
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
+                intent.getParcelableExtra(EXTRA_CALCULATION_RESULT, CalculationResult::class.java)
             } else {
-                binding.tvGasInfo.text = String.format("R$ %.2f / litro", result.gasPrice)
-                binding.tvAlcoholInfo.text = String.format("R$ %.2f / litro", result.ethanolPrice)
-
-                binding.tvGasCostKm.text = "---"
-                binding.tvAlcoholCostKm.text = "---"
+                @Suppress("DEPRECATION")
+                intent.getParcelableExtra(EXTRA_CALCULATION_RESULT) as? CalculationResult
             }
 
-            setupWinner(result.fuelResult.name)
+        if (result != null) {
+            if (result.vehicleItem != null) {
+                binding.tvGasInfo.text = getString(
+                    R.string.fuel_info_format,
+                    result.gasPrice,
+                    result.vehicleItem.gasolineConsumption
+                )
+                binding.tvAlcoholInfo.text = getString(
+                    R.string.fuel_info_format,
+                    result.ethanolPrice,
+                    result.vehicleItem.alcoholConsumption
+                )
+                binding.tvGasCostKm.text =
+                    getString(R.string.fuel_price_format, result.gasPricePerKm)
+                binding.tvAlcoholCostKm.text =
+                    getString(R.string.fuel_price_format, result.ethanolPricePerKm)
+            } else {
+                binding.tvGasInfo.text =
+                    getString(R.string.fuel_price_liter_format, result.gasPrice)
+                binding.tvAlcoholInfo.text =
+                    getString(R.string.fuel_price_liter_format, result.ethanolPrice)
+
+                binding.tvGasCostKm.text = getString(R.string.empty_value)
+                binding.tvAlcoholCostKm.text = getString(R.string.empty_value)
+            }
+
+            setupWinner(result.fuelResult)
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
@@ -60,49 +71,65 @@ class ResultActivity : AppCompatActivity() {
         setupListeners()
     }
 
-    private fun setupWinner(bestOption: String?) {
+    private fun setupWinner(bestOption: FuelResult?) {
         val colorPrimary = getThemeColor(this, androidx.appcompat.R.attr.colorPrimary)
 
-        val isGasolineWinner = bestOption == FuelResult.GASOLINE.name
-//todo: substituir logica por strategy pattern
-        binding.tvWinnerName.text = if (isGasolineWinner) "Gasolina" else "Álcool"
+        when (bestOption) {
+            FuelResult.GASOLINE -> {
+                setupGasolineOption()
+
+            }
+
+            FuelResult.ALCOHOL -> {
+                setupAlcoholWiner()
+            }
+
+            else -> setupGasolineOption()
+
+        }
+
+        binding.tvWinnerName.text = getString(bestOption!!.displayNameResId)
         binding.tvWinnerName.setTextColor(colorPrimary)
 
-        if (isGasolineWinner) {
-            applyWinnerStyle(
-                card = binding.cardResumoGasolina,
-                priceText = binding.tvGasCostKm,
-                titleText = binding.tvGasName,
-                infoText = binding.tvGasInfo,
-                iconContainer = binding.flIconGas,
-                iconImage = binding.flIconGas.getChildAt(0) as ImageView
-            )
-            applyLoserStyle(
-                card = binding.cardResumoAlcool,
-                priceText = binding.tvAlcoholCostKm,
-                titleText = binding.tvAlcoholName,
-                infoText = binding.tvAlcoholInfo,
-                iconContainer = binding.flIconAlc,
-                iconImage = binding.flIconAlc.getChildAt(0) as ImageView
-            )
-        } else {
-            applyWinnerStyle(
-                card = binding.cardResumoAlcool,
-                priceText = binding.tvAlcoholCostKm,
-                titleText = binding.tvAlcoholName,
-                infoText = binding.tvAlcoholInfo,
-                iconContainer = binding.flIconAlc,
-                iconImage = binding.flIconAlc.getChildAt(0) as ImageView
-            )
-            applyLoserStyle(
-                card = binding.cardResumoGasolina,
-                priceText = binding.tvGasCostKm,
-                titleText = binding.tvGasName,
-                infoText = binding.tvGasInfo,
-                iconContainer = binding.flIconGas,
-                iconImage = binding.flIconGas.getChildAt(0) as ImageView
-            )
-        }
+
+    }
+
+    private fun setupAlcoholWiner() {
+        applyWinnerStyle(
+            card = binding.cardResumoAlcool,
+            priceText = binding.tvAlcoholCostKm,
+            titleText = binding.tvAlcoholName,
+            infoText = binding.tvAlcoholInfo,
+            iconContainer = binding.flIconAlc,
+            iconImage = binding.flIconAlc.getChildAt(0) as ImageView
+        )
+        applyLoserStyle(
+            card = binding.cardResumoGasolina,
+            priceText = binding.tvGasCostKm,
+            titleText = binding.tvGasName,
+            infoText = binding.tvGasInfo,
+            iconContainer = binding.flIconGas,
+            iconImage = binding.flIconGas.getChildAt(0) as ImageView
+        )
+    }
+
+    private fun setupGasolineOption() {
+        applyWinnerStyle(
+            card = binding.cardResumoGasolina,
+            priceText = binding.tvGasCostKm,
+            titleText = binding.tvGasName,
+            infoText = binding.tvGasInfo,
+            iconContainer = binding.flIconGas,
+            iconImage = binding.flIconGas.getChildAt(0) as ImageView
+        )
+        applyLoserStyle(
+            card = binding.cardResumoAlcool,
+            priceText = binding.tvAlcoholCostKm,
+            titleText = binding.tvAlcoholName,
+            infoText = binding.tvAlcoholInfo,
+            iconContainer = binding.flIconAlc,
+            iconImage = binding.flIconAlc.getChildAt(0) as ImageView
+        )
     }
 
     private fun applyWinnerStyle(
@@ -115,9 +142,12 @@ class ResultActivity : AppCompatActivity() {
     ) {
         val colorPrimary = getThemeColor(this, androidx.appcompat.R.attr.colorPrimary)
 
-        val colorPrimaryContainer = getThemeColor(this, com.google.android.material.R.attr.colorPrimaryContainer)
-        val colorOnPrimaryContainer = getThemeColor(this, com.google.android.material.R.attr.colorOnPrimaryContainer)
-        val colorOnSurfaceVariant = getThemeColor(this, com.google.android.material.R.attr.colorOnSurfaceVariant)
+        val colorPrimaryContainer =
+            getThemeColor(this, com.google.android.material.R.attr.colorPrimaryContainer)
+        val colorOnPrimaryContainer =
+            getThemeColor(this, com.google.android.material.R.attr.colorOnPrimaryContainer)
+        val colorOnSurfaceVariant =
+            getThemeColor(this, com.google.android.material.R.attr.colorOnSurfaceVariant)
 
         card.strokeColor = colorPrimary
         card.strokeWidth = 6
@@ -128,6 +158,7 @@ class ResultActivity : AppCompatActivity() {
         iconContainer.background.setTint(colorPrimaryContainer)
         iconImage.setColorFilter(colorOnPrimaryContainer)
     }
+
     private fun applyLoserStyle(
         card: com.google.android.material.card.MaterialCardView,
         priceText: TextView,
@@ -136,10 +167,13 @@ class ResultActivity : AppCompatActivity() {
         iconContainer: android.view.View,
         iconImage: ImageView
     ) {
-        val colorOutline = getThemeColor(this, com.google.android.material.R.attr.colorOutlineVariant)
+        val colorOutline =
+            getThemeColor(this, com.google.android.material.R.attr.colorOutlineVariant)
         val colorOnSurface = getThemeColor(this, com.google.android.material.R.attr.colorOnSurface)
-        val colorOnSurfaceVariant = getThemeColor(this, com.google.android.material.R.attr.colorOnSurfaceVariant)
-        val colorSurfaceVariant = getThemeColor(this, com.google.android.material.R.attr.colorSurfaceVariant)
+        val colorOnSurfaceVariant =
+            getThemeColor(this, com.google.android.material.R.attr.colorOnSurfaceVariant)
+        val colorSurfaceVariant =
+            getThemeColor(this, com.google.android.material.R.attr.colorSurfaceVariant)
 
         card.strokeColor = colorOutline
         card.strokeWidth = 2

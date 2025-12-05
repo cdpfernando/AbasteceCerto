@@ -13,7 +13,6 @@
     <string name="btn_calculate">Calculate</string>
     <string name="desc_icon_gas_station">Fuel Pump Icon</string>
 
-    <!-- Empty State Strings -->
     <string name="title_no_vehicle">No vehicle selected</string>
     <string name="desc_no_vehicle">For accurate results, select or add a vehicle.</string>
     <string name="btn_select_vehicle">Select/Add Vehicle</string>
@@ -24,6 +23,20 @@
     <string name="add_vehicle">Add vehicle</string>
     <string name="edit_vehicle">Edit vehicle</string>
     <string name="alcohol_price_hint">Ethanol Price</string>
+
     <string name="gas_price_hint">Gasoline Price</string>
+    <string name="fuel_price_format">R$ %.2f</string>
+    <string name="fuel_price_liter_format">R$ %.2f / liter</string>
+    <string name="empty_value">---</string>
+
+    <string name="dialog_delete_vehicle_title">Delete vehicle</string>
+    <string name="dialog_delete_vehicle_message">Are you sure you want to remove the vehicle %1$s?</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="consumption_abbreviated">A: %.1f / G: %.1f</string>
+    <string name="consumption_full">Alcohol: %.1f / Gasoline: %.1f</string>
+
+    <string name="fuel_gasoline">Gasoline</string>
+    <string name="fuel_alcohol">Alcohol</string>
 
 </resources>

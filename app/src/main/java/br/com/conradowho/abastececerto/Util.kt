@@ -1,13 +1,9 @@
 package br.com.conradowho.abastececerto
+import androidx.annotation.StringRes
 
-import android.R.attr.theme
-
-
-//todo: remover strings hard coded
-enum class FuelResult (val displayName:String){
-    GASOLINE("Gasolina"),
-    ALCOHOL("Álcool");
+enum class FuelResult(@StringRes val displayNameResId: Int) {
+    GASOLINE(R.string.fuel_gasoline),
+    ALCOHOL(R.string.fuel_alcohol);
 }
-
 
 

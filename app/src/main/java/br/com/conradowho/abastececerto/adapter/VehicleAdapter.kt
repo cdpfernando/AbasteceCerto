@@ -3,6 +3,7 @@ package br.com.conradowho.abastececerto.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import br.com.conradowho.abastececerto.R
 import br.com.conradowho.abastececerto.databinding.ItemVehicleCardBinding
 import br.com.conradowho.abastececerto.entity.Vehicle
 
@@ -24,7 +25,11 @@ class VehicleAdapter(
         val vehicle = vehicleList[position]
 
         holder.binding.tvVehicleName.text = vehicle.name
-        holder.binding.tvVehicleStatus.text = vehicle.getFullConsumptionDescription()
+        holder.binding.tvVehicleStatus.text = holder.itemView.context.getString(
+            R.string.consumption_full,
+            vehicle.alcoholConsumption,
+            vehicle.gasolineConsumption
+        )
 
         holder.itemView.setOnClickListener {
             onSelect(vehicle)

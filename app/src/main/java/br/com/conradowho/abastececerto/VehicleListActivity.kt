@@ -99,12 +99,11 @@ class VehicleListActivity : AppCompatActivity() {
         }
     }
 
-    //todo: remover strings hard coded
    private fun confirmDelete(vehicle: Vehicle) {
         androidx.appcompat.app.AlertDialog.Builder(this)
-            .setTitle("Excluir Veículo")
-            .setMessage("Tem certeza que deseja remover o veículo ${vehicle.name}?")
-            .setPositiveButton("Excluir") { _, _ ->
+            .setTitle(getString(R.string.dialog_delete_vehicle_title))
+            .setMessage(getString(R.string.dialog_delete_vehicle_message, vehicle.name))
+            .setPositiveButton(getString(R.string.action_delete)) { _, _ ->
                 dbHandler.delete(vehicle._id)
 
                 if(currentVehicle != null && currentVehicle!!._id == vehicle._id) {
@@ -117,7 +116,7 @@ class VehicleListActivity : AppCompatActivity() {
                 }
                 loadData()
             }
-            .setNegativeButton("Cancelar", null)
+            .setNegativeButton(getString(R.string.action_cancel), null)
             .show()
     }
 }

@@ -13,7 +13,6 @@
     <string name="btn_calculate">Calcular</string>
     <string name="desc_icon_gas_station">Ícone de Bomba de Combustível</string>
 
-    <!-- Empty State Strings -->
     <string name="title_no_vehicle">Nenhum veículo selecionado</string>
     <string name="desc_no_vehicle">Para um cálculo preciso, selecione ou cadastre um veículo.</string>
     <string name="btn_select_vehicle">Selecionar/Cadastrar Veículo</string>
@@ -21,11 +20,23 @@
 
     <string name="desc_back">Voltar</string>
     <string name="fuel_info_format">R$ %.2f / %.1f km/l</string>
+    <string name="fuel_price_format">R$ %.2f</string>
+    <string name="fuel_price_liter_format">R$ %.2f / litro</string>
+    <string name="empty_value">---</string>
 
-    <!-- Correções de acentuação e padronização -->
     <string name="add_vehicle">Adicionar Veículo</string>
     <string name="edit_vehicle">Editar Veículo</string>
     <string name="alcohol_price_hint">Preço do Álcool</string>
     <string name="gas_price_hint">Preço da Gasolina</string>
+
+    <string name="dialog_delete_vehicle_title">Excluir Veículo</string>
+    <string name="dialog_delete_vehicle_message">Tem certeza que deseja remover o veículo %1$s?</string>
+    <string name="action_delete">Excluir</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="consumption_abbreviated">A: %.1f / G: %.1f</string>
+    <string name="consumption_full">Álcool: %.1f / Gasolina: %.1f</string>
+
+    <string name="fuel_gasoline">Gasolina</string>
+    <string name="fuel_alcohol">Álcool</string>
 
 </resources>

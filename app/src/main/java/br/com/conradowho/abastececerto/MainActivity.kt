@@ -19,11 +19,12 @@ class MainActivity : AppCompatActivity() {
     private var currentVehicle: Vehicle? = null
     private var service: VehicleService = VehicleService()
 
-    companion object{
+    companion object {
         val EXTRA_VEHICLE_DELETED = "EXTRA_VEHICLE_DELETED"
         val EXTRA_VEHICLE_SELECTED = "EXTRA_VEHICLE_SELECTED"
 
     }
+
     private lateinit var db: DatabaseHandler
     private val vehicleActivityLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -36,12 +37,13 @@ class MainActivity : AppCompatActivity() {
                 updateVehicleDisplay(null)
                 return@registerForActivityResult
             }
-            currentVehicle = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
-                data?.getParcelableExtra(EXTRA_VEHICLE_SELECTED, Vehicle::class.java)
-            } else {
-                @Suppress("DEPRECATION")
-                (data?.getParcelableExtra(EXTRA_VEHICLE_SELECTED))
-            }
+            currentVehicle =
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
+                    data?.getParcelableExtra(EXTRA_VEHICLE_SELECTED, Vehicle::class.java)
+                } else {
+                    @Suppress("DEPRECATION")
+                    (data?.getParcelableExtra(EXTRA_VEHICLE_SELECTED))
+                }
 
             updateVehicleDisplay(currentVehicle)
 
@@ -103,10 +105,11 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-            val result =  service.getBestOption(
+            val result = service.getBestOption(
                 binding.etGasoline.text.toString().toDouble(),
                 binding.etAlcohol.text.toString().toDouble(),
-                currentVehicle)
+                currentVehicle
+            )
 
             val intent = Intent(this, ResultActivity::class.java)
 
@@ -122,9 +125,11 @@ class MainActivity : AppCompatActivity() {
         if (vehicle != null) {
             binding.containerEmptyVehicle.visibility = View.GONE
             binding.cardVehicle.visibility = View.VISIBLE
-            
-            binding.tvVehicleName.text = vehicle!!.name
-            binding.tvVehicleConsumption.text = vehicle!!.getAbbreviatedConsumptionDescription()
+
+            binding.tvVehicleName.text = vehicle.name
+            binding.tvVehicleConsumption.text = getString(
+                R.string.consumption_full, vehicle.alcoholConsumption, vehicle.gasolineConsumption
+            )
         } else {
             binding.containerEmptyVehicle.visibility = View.VISIBLE
             binding.cardVehicle.visibility = View.GONE
