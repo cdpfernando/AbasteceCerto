@@ -107,7 +107,7 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-            val result = service.getBestOption(
+            val result = service.calculateBestFuel(
                 binding.etGasoline.text.toString().toDouble(),
                 binding.etAlcohol.text.toString().toDouble(),
                 currentVehicle
