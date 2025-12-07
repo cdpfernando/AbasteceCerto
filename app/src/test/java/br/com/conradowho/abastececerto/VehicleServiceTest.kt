@@ -10,7 +10,12 @@ class VehicleServiceTest {
 
     @Test
     fun getBestOption_withStandardRule_shouldReturnAlcohol() {
-        val result = service.calculateBestFuel(5.0, 3.45, null)
+        //Arrange
+        val gasPrice = 5.0
+        val ethanolPrice = 3.45
+
+        //Act
+        val result = service.calculateBestFuel(gasPrice, ethanolPrice, null)
         Assert.assertEquals(FuelResult.ALCOHOL, result.fuelResult)
     }
 
@@ -22,29 +27,32 @@ class VehicleServiceTest {
 
     @Test
     fun getBestOption_withVehicleConsumptionBetterInGasoline_shouldReturnGasoline() {
-                val efficientCar =
+        //Arrange
+        val efficientCar =
             Vehicle(1, "Fusca", 7.0, 14.0)
 
+        //Act
         val result = service.calculateBestFuel(10.0, 10.0, efficientCar)
 
 
+        //Assert
         Assert.assertEquals(0.7, result.gasPricePerKm, 0.1)
         Assert.assertEquals(1.4, result.ethanolPricePerKm, 0.1)
-
         Assert.assertEquals(FuelResult.GASOLINE, result.fuelResult)
     }
 
     @Test
     fun getBestOption_withVehicleConsumptionBetterInAlcohol_shouldReturnAlcohol() {
-        val efficientCar =
+        //Arrange
+               val efficientCar =
             Vehicle(1, "Fusca", 14.0, 7.0)
 
+        //Act
         val result = service.calculateBestFuel(10.0, 10.0, efficientCar)
 
-
+//Assert
         Assert.assertEquals(1.4, result.gasPricePerKm, 0.1)
         Assert.assertEquals(0.7, result.ethanolPricePerKm, 0.1)
-
         Assert.assertEquals(FuelResult.ALCOHOL, result.fuelResult)
     }
 }
