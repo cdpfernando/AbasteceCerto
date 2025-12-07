@@ -127,6 +127,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:textColor="?attr/colorOnSurface"
+                    android:digits="0123456789."
                     tools:text="10.5" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -156,6 +157,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
+                    android:digits="0123456789."
                     android:textColor="?attr/colorOnSurface"
                     tools:text="14.2" />
             </com.google.android.material.textfield.TextInputLayout>

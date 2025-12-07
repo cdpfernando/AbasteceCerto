@@ -57,7 +57,7 @@ class MainActivity : BaseActivity() {
 
         super.onCreate(savedInstanceState)
 
-        enableEdgeToEdge()
+//        enableEdgeToEdge()
 
         db = DatabaseHandler.getInstance(this)
 

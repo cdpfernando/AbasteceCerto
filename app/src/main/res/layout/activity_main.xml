@@ -2,13 +2,13 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorSurface"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="24dp">
@@ -253,7 +253,7 @@
             android:layout_height="wrap_content"
             app:barrierDirection="bottom"
             app:constraint_referenced_ids="container_empty_vehicle,card_vehicle" />
-        
+
 
         <TextView
             android:id="@+id/tv_prices_title"
@@ -287,13 +287,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_prices_title"
+
             app:prefixText="R$ ">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_alcohol"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="0123456789.,"
+                android:digits="0123456789."
+                android:imeOptions="actionNext"
                 android:inputType="numberDecimal"
                 android:textColor="?attr/colorOnSurface" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -323,7 +325,8 @@
                 android:id="@+id/et_gasoline"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="0123456789.,"
+                android:digits="0123456789."
+                android:imeOptions="actionDone"
                 android:inputType="numberDecimal"
                 android:textColor="?attr/colorOnSurface" />
         </com.google.android.material.textfield.TextInputLayout>
