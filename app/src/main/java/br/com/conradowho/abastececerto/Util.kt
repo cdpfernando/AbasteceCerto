@@ -1,4 +1,5 @@
 package br.com.conradowho.abastececerto
+
 import androidx.annotation.StringRes
 
 enum class FuelResult(@StringRes val displayNameResId: Int) {

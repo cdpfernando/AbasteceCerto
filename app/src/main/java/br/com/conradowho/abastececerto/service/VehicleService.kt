@@ -61,6 +61,7 @@ class VehicleService {
             ethanolPrice,
             null,
             0.0,
-            0.0)
+            0.0
+        )
     }
 }

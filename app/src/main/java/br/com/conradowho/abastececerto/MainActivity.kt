@@ -15,7 +15,7 @@ import br.com.conradowho.abastececerto.databinding.ActivityMainBinding
 import br.com.conradowho.abastececerto.entity.Vehicle
 import br.com.conradowho.abastececerto.service.VehicleService
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
     private var currentVehicle: Vehicle? = null
     private var service: VehicleService = VehicleService()
@@ -52,8 +52,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
         installSplashScreen()
+
+        super.onCreate(savedInstanceState)
+
         enableEdgeToEdge()
 
         db = DatabaseHandler.getInstance(this)

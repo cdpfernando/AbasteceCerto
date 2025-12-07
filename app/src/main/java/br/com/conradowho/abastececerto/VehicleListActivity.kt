@@ -12,22 +12,25 @@ import br.com.conradowho.abastececerto.database.DatabaseHandler
 import br.com.conradowho.abastececerto.entity.Vehicle
 
 
-class VehicleListActivity : AppCompatActivity() {
+class VehicleListActivity : BaseActivity() {
 
     private lateinit var binding: ActivityVehicleListBinding
     private lateinit var dbHandler: DatabaseHandler
     private var currentVehicle: Vehicle? = null
-     private lateinit var adapter: VehicleAdapter
+    private lateinit var adapter: VehicleAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_AbasteceCerto)
         super.onCreate(savedInstanceState)
 
         binding = ActivityVehicleListBinding.inflate(layoutInflater)
         setContentView(binding.root)
         androidx.core.view.ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
-            val systemBars = insets.getInsets(androidx.core.view.WindowInsetsCompat.Type.systemBars())
+            val systemBars =
+                insets.getInsets(androidx.core.view.WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets}
+            insets
+        }
 
         dbHandler = DatabaseHandler.getInstance(this)
 
@@ -64,7 +67,7 @@ class VehicleListActivity : AppCompatActivity() {
         updateListVisibilty(vehicleList)
 
         //todo: criar logica para destacar o veiculo selecionado
-       adapter = VehicleAdapter(
+        adapter = VehicleAdapter(
             vehicleList = vehicleList,
             onSelect = { vehicle ->
                 val resultIntent = Intent()
@@ -99,14 +102,14 @@ class VehicleListActivity : AppCompatActivity() {
         }
     }
 
-   private fun confirmDelete(vehicle: Vehicle) {
+    private fun confirmDelete(vehicle: Vehicle) {
         androidx.appcompat.app.AlertDialog.Builder(this)
             .setTitle(getString(R.string.dialog_delete_vehicle_title))
             .setMessage(getString(R.string.dialog_delete_vehicle_message, vehicle.name))
             .setPositiveButton(getString(R.string.action_delete)) { _, _ ->
                 dbHandler.delete(vehicle._id)
 
-                if(currentVehicle != null && currentVehicle!!._id == vehicle._id) {
+                if (currentVehicle != null && currentVehicle!!._id == vehicle._id) {
                     currentVehicle = null
 
                     val resultIntent = Intent()

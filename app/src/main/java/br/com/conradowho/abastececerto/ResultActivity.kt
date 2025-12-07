@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import br.com.conradowho.abastececerto.databinding.ActivityResultBinding
 import br.com.conradowho.abastececerto.entity.CalculationResult
 
-class ResultActivity : AppCompatActivity() {
+class ResultActivity : BaseActivity() {
     companion object {
         const val EXTRA_CALCULATION_RESULT = "EXTRA_CALCULATION_RESULT"
     }
@@ -18,6 +18,7 @@ class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 

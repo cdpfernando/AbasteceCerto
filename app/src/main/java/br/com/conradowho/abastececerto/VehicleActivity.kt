@@ -9,15 +9,17 @@ import br.com.conradowho.abastececerto.database.DatabaseHandler
 import br.com.conradowho.abastececerto.databinding.ActivityVehicleBinding
 import br.com.conradowho.abastececerto.entity.Vehicle
 
-class VehicleActivity : AppCompatActivity() {
+class VehicleActivity : BaseActivity() {
     companion object {
         val EXTRA_VEHICLE_EDIT = "EXTRA_VEHICLE_EDIT"
     }
+
     private lateinit var binding: ActivityVehicleBinding
     private var currentVehicle: Vehicle? = null
     private lateinit var db: DatabaseHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_AbasteceCerto)
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 

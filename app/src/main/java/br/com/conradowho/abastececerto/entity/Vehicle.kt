@@ -9,7 +9,7 @@ data class Vehicle(
     val name: String,
     val alcoholConsumption: Double,
     val gasolineConsumption: Double
-) : Parcelable{
+) : Parcelable {
     override fun toString(): String {
         return name
     }

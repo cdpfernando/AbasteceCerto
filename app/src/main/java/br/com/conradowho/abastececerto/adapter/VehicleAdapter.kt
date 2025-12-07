@@ -14,10 +14,12 @@ class VehicleAdapter(
     private val onDelete: (Vehicle) -> Unit
 ) : RecyclerView.Adapter<VehicleAdapter.VehicleViewHolder>() {
 
-    inner class VehicleViewHolder(val binding: ItemVehicleCardBinding) : RecyclerView.ViewHolder(binding.root)
+    inner class VehicleViewHolder(val binding: ItemVehicleCardBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VehicleViewHolder {
-        val binding = ItemVehicleCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemVehicleCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return VehicleViewHolder(binding)
     }
 
