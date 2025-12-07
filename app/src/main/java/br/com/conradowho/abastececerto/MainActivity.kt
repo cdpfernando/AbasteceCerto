@@ -57,8 +57,6 @@ class MainActivity : BaseActivity() {
 
         super.onCreate(savedInstanceState)
 
-//        enableEdgeToEdge()
-
         db = DatabaseHandler.getInstance(this)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
