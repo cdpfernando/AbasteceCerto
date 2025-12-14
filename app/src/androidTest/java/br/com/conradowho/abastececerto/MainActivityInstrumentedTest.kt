@@ -11,6 +11,7 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import br.com.conradowho.abastececerto.database.DatabaseHandler
+import br.com.conradowho.abastececerto.entity.Vehicle
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -86,4 +87,5 @@ class MainActivityInstrumentedTest {
         )
         onView(ViewMatchers.withId(R.id.btn_calculate)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
     }
+
 }

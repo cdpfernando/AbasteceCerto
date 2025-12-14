@@ -73,6 +73,7 @@ class VehicleListActivity : BaseActivity() {
                 val resultIntent = Intent()
                 resultIntent.putExtra(EXTRA_VEHICLE_SELECTED, vehicle)
                 currentVehicle = vehicle
+                setVehicleIdInSharedPreferences(this,vehicle._id)
                 setResult(RESULT_OK, resultIntent)
                 finish()
             },

@@ -69,6 +69,7 @@ class MainActivity : BaseActivity() {
         }
 
         setupListeners()
+        currentVehicle = db.getById(getVehicleIdFromSharedPreferences(this))
         updateVehicleDisplay(currentVehicle)
 
     }
@@ -145,5 +146,9 @@ class MainActivity : BaseActivity() {
         //todo: criar logica para enviar o veiculo selecionado
 
         vehicleActivityLauncher.launch(intent)
+    }
+    private fun checkVehicleSelected(){
+
+
     }
 }
